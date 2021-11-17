@@ -24,6 +24,10 @@ public class Player implements Comparable<Player> {
         return number;
     }
 
+    public int getGameCount() { return games.size();}
+
+    public ArrayList<PlayerGame> getGames() {return games;}
+
     public void setHeight(String height) {
         this.height = height;
     }
