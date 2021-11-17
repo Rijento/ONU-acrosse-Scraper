@@ -1,4 +1,5 @@
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
 public class PlayerTableItemModel extends AbstractTableModel {
@@ -13,6 +14,29 @@ public class PlayerTableItemModel extends AbstractTableModel {
     @Override
     public int getRowCount() {
         return players.size();
+    }
+
+    @Override
+    public String getColumnName(int column) {
+        switch (column) {
+            case 0:
+                return "Number";
+            case 1:
+                return "Name";
+            case 2:
+                return "Games";
+            case 3:
+                return "Assists";
+            case 4:
+                return "Goals";
+            case 5:
+                return "Ground Balls";
+            case 6:
+                return "Turnovers";
+            case 7:
+                return "Turnovers Caused";
+        }
+        return "???";
     }
 
     @Override

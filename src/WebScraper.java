@@ -103,7 +103,7 @@ public class WebScraper {
             }
         }
 
-        Player thePlayer = new Player(name, number, games);
+        Player thePlayer = new Player(name, number, identifier, games);
         thePlayer.setHeight(height);
         thePlayer.setWeight(weight);
 

@@ -2,13 +2,15 @@ import java.util.ArrayList;
 
 public class Player implements Comparable<Player> {
     private String name;
+    private String identifier;
     private String height;
     private int weight;
     private int number;
     private ArrayList<PlayerGame> games;
-    Player(String name, int number, ArrayList<PlayerGame> games) {
+    Player(String name, int number, String identifier, ArrayList<PlayerGame> games) {
         this.name = name;
         this.number = number;
+        this.identifier = identifier;
         this.games = games;
     }
 
@@ -23,6 +25,8 @@ public class Player implements Comparable<Player> {
     public int getNumber() {
         return number;
     }
+
+    public String getIdentifier() { return identifier; }
 
     public int getGameCount() { return games.size();}
 
