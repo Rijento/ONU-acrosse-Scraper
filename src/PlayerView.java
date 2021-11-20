@@ -26,6 +26,7 @@ public class PlayerView extends JFrame {
         // Add listener to the buttons
         nothingButton.addActionListener(controller);
         playerButton.addActionListener(controller);
+        yearButton.addActionListener(controller);
 
         // Add buttons to a group so that only one can be selected at once
         ButtonGroup group = new ButtonGroup();
@@ -36,6 +37,8 @@ public class PlayerView extends JFrame {
         // Add buttons to a panel with a label so that it all exists on one line
         headerPanel = new JPanel();
         headerPanel.add(new JLabel("Compare With: "));
+        headerPanel.add(nothingButton);
+        headerPanel.add(playerButton);
 
         this.setupComboBoxes(player, team); //Only really need to use these values here thankfully
 
