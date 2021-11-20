@@ -44,7 +44,7 @@ public class PlayerView extends JFrame {
         this.setupComboBoxes(player, team); //Only really need to use these values here thankfully
 
         this.add(headerPanel);
-        this.setSize(920, 575);
+        this.setSize(1220, 575);
         this.controller.setFirstDisplay();
 
     }
