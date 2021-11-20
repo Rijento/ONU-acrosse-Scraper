@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class TeamView extends JFrame {
     JTable playerTable;
-    TeamController controller;
+    TeamViewController controller;
     PlayerTableItemModel playerTableItemModel;
     JComboBox yearDropdown;
     JComboBox sortingDropdown;
@@ -16,7 +16,7 @@ public class TeamView extends JFrame {
         this.setResizable(false); // We don't want this to be resizable
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); // We want the program to close if the window does
         this.setLayout(new FlowLayout()); // we are using a flow layout
-        controller = new TeamController(this);
+        controller = new TeamViewController(this);
         this.setupView();
         controller.setFirstDisplay();
     }
@@ -27,7 +27,7 @@ public class TeamView extends JFrame {
         this.setResizable(false); // We don't want this to be resizable
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); // We want the program to close if the window does
         this.setLayout(new FlowLayout()); // we are using a flow layout
-        controller = new TeamController(this, teamIn);
+        controller = new TeamViewController(this, teamIn);
         this.setupView();
         controller.setFirstDisplay();
     }

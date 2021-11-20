@@ -10,16 +10,16 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
-public class TeamController implements ItemListener, ListSelectionListener {
+public class TeamViewController implements ItemListener, ListSelectionListener {
     TeamView view;
     Team currentTeam;
 
-    public TeamController(TeamView view) throws IOException, InterruptedException {
+    public TeamViewController(TeamView view) throws IOException, InterruptedException {
         this.view = view;
         this.currentTeam = WebScraper.getYearTeam("2015-16");
     }
 
-    public TeamController(TeamView view, Team team) {
+    public TeamViewController(TeamView view, Team team) {
         this.view = view;
         this.currentTeam = team;
     }
