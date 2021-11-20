@@ -8,6 +8,10 @@ public class GameTableItemModel extends AbstractTableModel {
         this.games = games;
     }
 
+    public void setGames(ArrayList<PlayerGame> games) {
+        this.games = games;
+    }
+
     @Override
     public int getRowCount() {
         return games.size();

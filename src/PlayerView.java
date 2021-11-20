@@ -11,6 +11,8 @@ public class PlayerView extends JFrame {
     JComboBox playerDropdown;
     JComboBox yearDropdown;
     JPanel headerPanel;
+    PlayerPanel panel1;
+    PlayerPanel panel2;
     public PlayerView(Player player, Team team) throws IOException, InterruptedException {
         super();
         this.setResizable(false); // We don't want this to be resizable
@@ -43,9 +45,20 @@ public class PlayerView extends JFrame {
 
         this.setupComboBoxes(player, team); //Only really need to use these values here thankfully
 
+        // Setup panels
+        panel1 = new PlayerPanel(player);
+        panel2 = new PlayerPanel(player);
+        panel2.setVisible(false);
+
+
         this.add(headerPanel);
+        JPanel container = new JPanel();
+        container.setPreferredSize(new Dimension(1220, 575));
+        container.setLayout(new FlowLayout());
+        container.add(panel1);
+        container.add(panel2);
+        this.add(container);
         this.setSize(1220, 575);
-        this.controller.setFirstDisplay();
 
     }
 
@@ -59,9 +72,19 @@ public class PlayerView extends JFrame {
             }
         }
 
-        // create the comboboxes
+        // create the comboboxes and hide them
         playerDropdown = new JComboBox(players.toArray());
+        playerDropdown.setVisible(false);
         yearDropdown = new JComboBox(years.toArray());
+        yearDropdown.setVisible(false);
+
+        // Set item listeners
+        playerDropdown.addItemListener(controller);
+        yearDropdown.addItemListener(controller);
+
+        // add hidden dropdowns to header
+        this.headerPanel.add(playerDropdown);
+        this.headerPanel.add(yearDropdown);
 
         // The view controller will handle adding them to the view when necessary, so we're done here!
     }
