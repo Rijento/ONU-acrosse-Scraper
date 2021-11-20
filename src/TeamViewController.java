@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 public class TeamViewController implements ItemListener, ListSelectionListener {
     TeamView view;
     Team currentTeam;
+    boolean bounceflag = true;
 
     public TeamViewController(TeamView view) throws IOException, InterruptedException {
         this.view = view;
@@ -81,8 +82,21 @@ public class TeamViewController implements ItemListener, ListSelectionListener {
 
     @Override
     public void valueChanged(ListSelectionEvent listSelectionEvent) {
-        int i = this.view.playerTable.getSelectedRow();
-        Player selected = this.view.playerTableItemModel.getPlayer(i);
-        int test = 1;
+
+        if (bounceflag) { // For some reason it was opening two new windows whenever you clicked on a player.
+            int i = this.view.playerTable.getSelectedRow();
+            Player selected = this.view.playerTableItemModel.getPlayer(i);
+            try {
+                PlayerView view = new PlayerView(selected, currentTeam);
+                view.setVisible(true);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            bounceflag = false;
+        } else {
+            bounceflag = true;
+        }
     }
 }
