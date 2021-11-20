@@ -84,6 +84,11 @@ public class Player implements Comparable<Player> {
     }
 
     @Override
+    public String toString() {
+        return this.name;
+    }
+
+    @Override
     public int compareTo(Player player) {
         return this.number - player.number;
     }
