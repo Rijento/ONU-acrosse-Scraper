@@ -15,7 +15,7 @@ public class PlayerView extends JFrame {
         super();
         this.setResizable(false); // We don't want this to be resizable
         this.setLayout(new FlowLayout());
-        controller = new PlayerViewController(this);
+        controller = new PlayerViewController(this, player, team);
 
         // Create radio buttons
         nothingButton = new JRadioButton("Nothing");
@@ -40,6 +40,7 @@ public class PlayerView extends JFrame {
         this.setupComboBoxes(player, team); //Only really need to use these values here thankfully
 
         this.add(headerPanel);
+        this.setSize(920, 575);
         this.controller.setFirstDisplay();
 
     }
