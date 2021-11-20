@@ -39,6 +39,7 @@ public class PlayerView extends JFrame {
         headerPanel.add(new JLabel("Compare With: "));
         headerPanel.add(nothingButton);
         headerPanel.add(playerButton);
+        headerPanel.add(yearButton);
 
         this.setupComboBoxes(player, team); //Only really need to use these values here thankfully
 
