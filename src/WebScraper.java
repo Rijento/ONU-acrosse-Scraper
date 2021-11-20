@@ -110,9 +110,9 @@ public class WebScraper {
         return thePlayer;
     }
 
-    public static Map<String,String> getPlayerYears(String name, String currentYear) throws IOException, InterruptedException {
-        Map<String,String> years = new HashMap(); // A map for year and player identifier
-        ArrayList<Thread> threads = new ArrayList<>();
+    public static ArrayList<ComboItem> getPlayerYears(String name, String currentYear) throws IOException, InterruptedException {
+        ArrayList<ComboItem> years = new ArrayList(); // A map for year and player identifier
+        ArrayList<Thread> threads = new ArrayList();
 
         class yearFetcher implements Runnable {
             private String year;
@@ -135,7 +135,7 @@ public class WebScraper {
                         String href = nameLink.attributes().get("href");
                         String[] split = href.split("/");
                         String identifier = split[split.length - 1];
-                        years.put(year, identifier);
+                        years.add(new ComboItem(identifier, year));
                     }
                 }
             }
