@@ -2,7 +2,6 @@ import javax.swing.*;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class PlayerPanel extends JPanel {
     private Player player;

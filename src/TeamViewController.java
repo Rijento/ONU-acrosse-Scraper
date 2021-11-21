@@ -2,13 +2,9 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.io.Console;
 import java.io.IOException;
-import java.time.Year;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public class TeamViewController implements ItemListener, ListSelectionListener {
     TeamView view;
